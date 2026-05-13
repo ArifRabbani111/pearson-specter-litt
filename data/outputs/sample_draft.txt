@@ -1,0 +1,26 @@
+===== DRAFT OUTPUT =====
+CASE FACT SUMMARY
+
+PARTIES
+Harvey Specter, Travis Tanner
+
+BACKGROUND
+Based on the retrieved documents, this case involves a complaint 2024-CV-00123.
+
+KEY CLAIMS
+- The main claim appears to be related to breach of contract or similar legal matter
+- Specific details available in the source documents
+
+RELEVANT DATES
+Case number: 2024-CV-00123
+Jurisdiction: United States District Court
+
+OPEN QUESTIONS
+Additional information may be needed to fully characterize all aspects of this case.
+
+[Note: This is a fallback response due to API limitations. Full analysis would be available with valid API credentials.]
+
+
+===== CITATIONS =====
+[CHUNK: e5689a36_chunk_0] page 1 (score -8.3691)
+CASE NO. 2024-CV-00123 IN THE UNITED STATES DISTRICT COURT Plaintiff: Harvey Specter Defendant: Travis Tanner COMPLAINT FOR BREACH OF CONTRACT On January 15, 2024, defendant entered into a written agreement with plaintiff. The defendant failed to deliver services as agreed. Plaintiff seeks damages of $500,000.
