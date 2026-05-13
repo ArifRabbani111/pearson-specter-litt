@@ -2,7 +2,7 @@ from dataclasses import dataclass, field
 import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
+from feedback.learner import get_patterns_for_prompt
 from groq import Groq
 from retrieval.retriever import retrieve, RetrievedChunk
 from ingest.structurer import StructuredDocument
@@ -61,6 +61,10 @@ Case number  : {case_number}
 Doc type     : {doc_type}
 Jurisdiction : {jurisdiction}
 Parties      : {parties}
+
+---
+
+{learned_patterns}
 
 ---
 EVIDENCE PASSAGES:
@@ -128,6 +132,7 @@ def generate_draft(
         doc_type=doc.doc_type,
         jurisdiction=doc.jurisdiction or "Unknown",
         parties=", ".join(doc.parties) if doc.parties else "Unknown",
+        learned_patterns=get_patterns_for_prompt(),
         passages=passages,
     )
 
