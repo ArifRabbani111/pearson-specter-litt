@@ -1,0 +1,11 @@
+{
+  "timestamp": "20260514_064341",
+  "file": "data/samples/sample_case.txt",
+  "doc_id": "e5689a36",
+  "doc_type": "complaint",
+  "pages": 1,
+  "chunks": 1,
+  "patterns_learned": 1,
+  "draft_v1_length": 608,
+  "draft_v2_length": 608
+}

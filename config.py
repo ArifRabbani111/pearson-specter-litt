@@ -16,6 +16,7 @@ class Settings(BaseSettings):
     claude_model: str = "claude-sonnet-4-20250514"
     embedding_model: str = "models/embedding-001"
     reranker_model: str = "cross-encoder/ms-marco-MiniLM-L-6-v2"
+    groq_model: str = "llama-3.1-70b-versatile"
 
     class Config:
         env_file = ".env"

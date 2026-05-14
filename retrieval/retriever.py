@@ -15,8 +15,16 @@ _client = chromadb.PersistentClient(
     settings=ChromaSettings(anonymized_telemetry=False)
 )
 
-# Load reranker once at module level — slow to initialize
-_reranker = CrossEncoder(settings.reranker_model)
+# Load reranker lazily on first use (to avoid blocking on import)
+_reranker = None
+
+def _get_reranker():
+    """Lazily load the CrossEncoder model."""
+    global _reranker
+    if _reranker is None:
+        console.log("[dim]Loading cross-encoder reranker model...[/dim]")
+        _reranker = CrossEncoder(settings.reranker_model)
+    return _reranker
 
 
 @dataclass
@@ -88,8 +96,9 @@ def retrieve(
         return []
 
     # Rerank: cross-encoder scores (query, passage) pairs
+    reranker = _get_reranker()
     pairs = [[query, doc] for doc in docs]
-    rerank_scores = _reranker.predict(pairs)
+    rerank_scores = reranker.predict(pairs)
 
     # Zip everything together and sort by reranker score descending
     combined = sorted(
